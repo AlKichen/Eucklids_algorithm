@@ -3,16 +3,14 @@ import java.util.Scanner;
 public class GreatestCommonDivisor {
     public static void main(String[] args) {
         System.out.println("Enter two positive integers");
-        Scanner sc = new Scanner(System.in);
-        try {
+        try (Scanner sc = new Scanner(System.in)) {
             int number1 = Integer.parseInt(sc.nextLine());
             int number2 = Integer.parseInt(sc.nextLine());
-            sc.close();
-            System.out.println("Number1: " + number1);
-            System.out.println("Number2: " + number2);
+            System.out.println("Number 1: " + number1);
+            System.out.println("Number 2: " + number2);
             if (number1 > 0 && number2 > 0) {
                 int result = GTD(number1, number2);
-                System.out.println(result);
+                System.out.println("The greatest common divisor (GCD) for these numbers: " + result);
             } else {
                 System.out.println("The numbers must be POSITIVE! Please try again");
             }
